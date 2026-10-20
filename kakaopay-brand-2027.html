@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard-dynamic-subset.min.css" as="style" crossorigin>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2027년 사업계획 — 브랜드실 | 카카오페이</title>
+<style>
+:root{
+  --bg:#F6F7F9;
+  --surface:#FFFFFF;
+  --ink:#14161A;
+  --ink-soft:#464C56;
+  --ink-mute:#8A919C;
+  --line:#E7E9ED;
+  --accent:#5B6CFF;
+  --accent-soft:#F0F1FA;
+  --interior:#0F1115;
+  --interior-soft:#9BA3AF;
+  --radius:0;
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{
+  font-family:"Pretendard","Noto Sans KR",-apple-system,"Malgun Gothic",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+
+/* ---------- hero ---------- */
+header{
+  background:var(--interior);color:#fff;padding:96px 0 88px;position:relative;overflow:hidden;
+}
+header::before{
+  content:"";position:absolute;top:-180px;right:-120px;width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,rgba(61,90,254,.28),transparent 66%);
+}
+header::after{
+  content:"";position:absolute;bottom:-260px;left:-140px;width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.06),transparent 70%);
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.14em;
+  color:#AEB6FF;text-transform:uppercase;margin-bottom:30px;position:relative;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block}
+h1{font-size:clamp(42px,7.4vw,72px);font-weight:800;letter-spacing:-.035em;line-height:1.14;position:relative}
+.hero-tag{margin-top:20px;font-size:clamp(17px,2.8vw,22px);font-weight:600;color:#C6CCE6;position:relative}
+.hero-tag b{color:#8FA0FF;font-weight:800}
+.hero-sub{margin-top:28px;max-width:660px;font-size:17px;color:var(--interior-soft);position:relative}
+.meta{margin-top:40px;display:flex;gap:10px;flex-wrap:wrap;position:relative}
+.chip{border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:6px 16px;font-size:13px;font-weight:600;color:#D5D9E4}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:10;background:rgba(246,247,249,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:2px;overflow-x:auto;padding:10px 24px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;font-size:13px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:6px 13px;border-radius:8px;transition:.15s}
+nav a:hover{background:var(--accent-soft);color:var(--accent)}
+nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- sections ---------- */
+section{padding:110px 0 8px}
+.sec-head{margin-bottom:34px}
+.sec-eyebrow{font-size:14px;font-weight:800;color:var(--accent);letter-spacing:.16em;margin-bottom:14px}
+h2{font-size:clamp(30px,4.6vw,44px);font-weight:800;letter-spacing:-.025em}
+.lead{font-size:19px;font-weight:600;color:var(--ink-soft);margin-top:16px;max-width:760px}
+
+/* ---------- cards ---------- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:0;padding:34px;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 10px 30px rgba(20,22,26,.07);transform:translateY(-2px)}
+.card h3{font-size:19px;font-weight:800;margin-bottom:12px}
+.card p{font-size:15.5px;line-height:1.75;color:var(--ink-soft)}
+.dot{width:12px;height:12px;background:var(--accent);margin-bottom:20px}
+.dot.round{border-radius:50%}
+.role-note{margin-top:18px;background:var(--accent-soft);border-radius:0;padding:18px 24px;font-size:14px;color:var(--ink-soft)}
+.role-note b{color:var(--accent)}
+
+/* ---------- table ---------- */
+.tbl-wrap{background:var(--surface);border:1px solid var(--line);border-radius:0;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:15.5px}
+th,td{padding:18px 22px;text-align:left;vertical-align:top}
+thead th{background:#F2F3F7;font-size:12.5px;font-weight:800;color:var(--ink-soft);letter-spacing:.06em}
+tbody tr+tr{border-top:1px solid var(--line)}
+th:first-child,td:first-child{width:150px;font-weight:800;white-space:nowrap}
+td{color:var(--ink-soft)}
+tr td:first-child{color:var(--ink)}
+
+/* ---------- callout ---------- */
+.callout{
+  margin-top:20px;background:var(--surface);border-left:3px solid var(--accent);
+  border-radius:0;padding:24px 28px;font-size:15.5px;color:var(--ink);
+  box-shadow:0 4px 18px rgba(20,22,26,.05);
+}
+.callout strong{color:var(--accent)}
+.callout small{display:block;margin-top:12px;font-size:13.5px;color:var(--ink-mute)}
+
+/* ---------- vision ---------- */
+.vision-hero{
+  background:linear-gradient(180deg,#101319 0%,#0E1116 60%,#0C0F14 100%);color:#fff;border-radius:0;padding:104px 48px;text-align:center;
+  position:relative;overflow:hidden;margin-bottom:14px;
+}
+  
+.vision-hero::before{
+  content:"";position:absolute;top:-170px;left:50%;transform:translateX(-50%);
+  width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(61,90,254,.4),transparent 68%);
+}
+.vision-label{font-size:14px;font-weight:800;letter-spacing:.28em;color:#8FA0FF;margin-bottom:18px;position:relative}
+.vision-main{font-size:clamp(32px,5.6vw,52px);font-weight:800;letter-spacing:-.03em;position:relative}
+.vision-sub{margin-top:24px;font-size:16px;color:#ADB4C6;max-width:600px;line-height:1.8;margin-left:auto;margin-right:auto;position:relative}
+
+.sub-vision{
+  background:var(--surface);border:1px solid var(--line);border-radius:0;padding:64px 40px;text-align:center;margin-bottom:14px;
+}
+.sub-vision .vision-label{color:var(--accent)}
+.sub-vision .vision-main{font-size:clamp(24px,4vw,36px);color:var(--ink)}
+.sub-vision .vision-sub{color:var(--ink-soft)}
+
+  .dir-block{text-align:center;margin-top:72px}
+  .dir-block .timeline{margin-top:44px;background:linear-gradient(180deg,#F7F8FA,#EFF1F5);border:1px solid var(--line);padding:40px 32px}
+  .timeline{display:grid;grid-template-columns:1fr 44px 1fr;gap:12px;align-items:center;text-align:center}
+.t-card{background:var(--surface);border:1px solid var(--line);border-radius:0;padding:28px}
+.t-card.dim{background:#EDEFF4}
+.t-card .year{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.14em}
+.t-card h3{font-size:17.5px;font-weight:800;margin:10px 0 14px;line-height:1.4}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.tag{background:var(--accent-soft);color:var(--accent);font-size:13.5px;font-weight:700;border-radius:100px;padding:7px 18px}
+.t-card.dim .tag{background:#DCE1EA;color:var(--ink-soft)}
+.t-arrow{display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--accent)}
+
+
+/* ---------- strategy ---------- */
+.strat{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.strat .card{border-top:3px solid var(--accent)}
+.strat .dir{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.08em;margin-bottom:12px}
+.strat h3{font-size:26px;margin-bottom:10px}
+.strat .q{font-size:13.5px;color:var(--ink-mute)}
+
+/* ---------- goals ---------- */
+.goal{background:var(--surface);border:1px solid var(--line);border-radius:0;padding:38px 36px;margin-bottom:22px}
+.goal-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.goal-badge{border-radius:100px;padding:5px 15px;font-size:12.5px;font-weight:800;letter-spacing:.04em}
+.goal-badge.build{background:var(--accent-soft);color:var(--accent)}
+.goal-badge.grow{background:var(--interior);color:#fff}
+.goal h3{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.goal > p{font-size:14.5px;color:var(--ink-soft);margin:12px 0 30px}
+.kw{
+  background:#F2F3F7;border-radius:0;padding:26px 30px;margin-bottom:32px;font-size:16.5px;line-height:1.8;
+}
+.kw b{display:block;font-size:12.5px;font-weight:800;letter-spacing:.14em;color:var(--accent);margin-bottom:8px}
+.steps{list-style:none;counter-reset:s}
+.steps > li{counter-increment:s;padding:0 0 26px 52px;position:relative}
+.steps > li:last-child{padding-bottom:0}
+.steps > li::before{
+  content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;
+  font-size:12px;font-weight:800;color:var(--ink-mute);letter-spacing:.08em;
+  border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:var(--bg);
+}
+.steps ul.mini{list-style:none;padding:0;margin:10px 0 0}.steps ul.mini li{position:relative;padding-left:18px;margin-top:9px;font-size:15.5px;line-height:1.7;color:var(--ink-soft)}.steps ul.mini li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;background:var(--accent)} .steps h4{font-size:18px;font-weight:800;margin:2px 0 8px}
+.steps p{font-size:15.5px;line-height:1.75;color:var(--ink-soft)}
+.result{margin-top:26px;border-top:1px solid var(--line);padding-top:22px;font-size:15.5px;color:var(--ink-soft)}
+.result b{color:var(--accent)}
+
+/* ---------- kpi ---------- */
+.kpi-note{margin-top:18px;font-size:15px;color:var(--ink-soft);line-height:1.8}
+.kpi-note b{color:var(--ink)}
+
+/* ---------- asks ---------- */
+.asks .steps > li::before{background:var(--interior);color:#fff;border-color:var(--interior)}
+
+/* ---------- conclusion ---------- */
+.conclusion{
+  background:var(--interior);border-radius:0;padding:96px 48px;margin:110px 0 60px;text-align:center;color:#fff;
+  position:relative;overflow:hidden;
+}
+.conclusion::before{
+  content:"";position:absolute;top:-200px;right:-140px;width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(61,90,254,.3),transparent 66%);
+}
+.c-lines{position:relative;display:grid;gap:12px;max-width:560px;margin:0 auto}
+.c-line{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:0;
+  padding:14px 20px;font-size:14.5px;color:#C6CCE6;
+}
+.c-line b{color:#fff}
+.c-line.hl{background:var(--interior);border-color:var(--interior);font-size:20px;font-weight:800;color:#fff;padding:22px 24px}
+.c-line.hl b{color:#C6CEFF}
+
+footer{border-top:1px solid var(--line);padding:30px 0 52px;font-size:12.5px;color:var(--ink-mute);text-align:center}
+
+@media (max-width:720px){
+  header{padding:68px 0 56px}
+  .grid2,.strat{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr}
+  .t-arrow{justify-content:center;transform:rotate(90deg)}
+  .vision-hero,.conclusion{padding:44px 24px}
+  .sub-vision{padding:32px 22px}
+  .goal{padding:28px 22px}
+  th,td{padding:13px 14px}
+  th:first-child,td:first-child{width:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">2027 Business Plan · 브랜드실</span>
+    <h1>2027 브랜드실 사업계획</h1>
+    <p class="hero-sub"><strong style="color:#fff;font-weight:800">선택의 이유를 만들고, 선택의 기회를 늘린다</strong> —<br>브랜드 가치 구축과 비즈니스 성장 기여를 위한 2027년 전략과 실행과제</p>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#s1">역할</a>
+  <a href="#s2">회고</a>
+  <a href="#s3">비전</a>
+  <a href="#s4">전략방향</a>
+  <a href="#s5">목표·과제</a>
+  <a href="#s6">KPI</a>
+  <a href="#s7">실행원칙</a>
+  <a href="#s8">후속과제</a>
+  <a href="#s9">전사 요청</a>
+</div></nav>
+
+<div class="wrap">
+
+<section id="s1">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 01</div><h2>브랜드실의 역할</h2></div>
+  <p class="lead">브랜드의 가치를 정의하고 축적하며, 고객의 선택을 이끌어 비즈니스 성장에 기여</p>
+  <div class="grid2" style="margin-top:30px">
+    <div class="card">
+      <div class="dot"></div>
+      <h3>카카오페이 가치 구축</h3>
+      <p>고객이 카카오페이를 선택해야 할 이유를 정의하고<br>경쟁사와 구별되는 인식과 경험을 축적</p>
+    </div>
+    <div class="card">
+      <div class="dot round"></div>
+      <h3>비즈니스 성장 기여</h3>
+      <p>플랫폼이 제공하는 가치를 고객에게 효과적으로 전달하고<br>실제 서비스 이용으로 연결</p>
+    </div>
+  </div>
+  <div class="role-note"><b>역할 수행</b> — 브랜드실은 브랜드의 방향성과 일관성을 주도하고, 사업조직과의 협업을 통해 고객의 인식과 행동 변화를 만들어간다</div>
+</section>
+
+<section id="s2">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 02</div><h2>지난 2년의 회고 및 문제의식</h2></div>
+  <p class="lead">다양한 서비스와 혜택을 알리는 캠페인·커뮤니케이션을 전개해 왔으나, 개별 활동이 카카오페이만의 차별적 가치와 고유의 브랜드 자산으로 축적되는 데에는 한계가 있었다</p>
+  <div class="tbl-wrap" style="margin-top:30px">
+    <table>
+      <thead><tr><th>회고 영역</th><th>기존 접근 및 한계</th><th>향후 개선 방향</th></tr></thead>
+      <tbody>
+        <tr><td>차별적 가치</td><td>개별 서비스·혜택 안내에 집중</td><td>카카오페이만의 선택 이유 명확화</td></tr>
+        <tr><td>활동의 연결성</td><td>캠페인별 메시지와 경험이 분절</td><td style="white-space:nowrap">개별 활동의 성과가 카카오페이 고유의 브랜드 자산으로 축적되도록 설계</td></tr>
+        <tr><td>사업 기여 방식</td><td style="white-space:nowrap">개별 캠페인을 통한 단기 이용 유도 중심</td><td style="white-space:nowrap">단기 이용 성과를 지속적인 이용과 브랜드 선호로 연결</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <strong>핵심 질문</strong> — 수많은 캠페인과 커뮤니케이션을 통해 고객에게 카카오페이에 대한 <strong>어떤 인식과 선택의 이유</strong>를 남길 것인가
+    <small style="color:var(--ink-soft);font-weight:600;font-size:14.5px;line-height:1.7">브랜드는 <b style="color:var(--accent)">서비스·고객 경험·커뮤니케이션의 총합</b>으로 형성되는 만큼, <b style="color:var(--accent)">플랫폼·서비스 자체의 차별적 경쟁력</b>에 대한 전사적 고민도 병행이 필요</small>
+  </div>
+</section>
+
+<section id="s3">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 03</div><h2>브랜드 비전 및 중장기 지향점</h2></div>
+  <div class="vision-hero">
+    <div class="vision-label">브랜드 비전</div>
+    <div class="vision-main">생활을 움직이는 금융</div>
+    <p class="vision-sub" style="font-size:16px;color:#E6E9F4">일상의 필요를 이해하고 해결하는 금융으로, 사람들의 삶이 더 나은 방향으로 나아가도록 돕는다</p>
+  </div>
+  <div class="dir-block">
+    <div class="vision-label" style="color:var(--accent);margin-bottom:16px;letter-spacing:.24em">2030 브랜드 지향점</div>
+    <div class="vision-main" style="font-size:clamp(30px,4.4vw,42px);color:var(--ink)">생활금융 에이전트</div>
+    <p style="margin-top:22px;font-size:16px;line-height:1.8;color:var(--ink-soft)">생활금융 플랫폼을 넘어 사용자의 생활과 금융 상황을 이해하고<br>더 나은 금융 선택과 행동을 돕는 금융 브랜드로 진화</p>
+    <div class="timeline">
+      <div>
+        <div class="year" style="font-size:14px;font-weight:800;color:var(--accent);letter-spacing:.24em;margin-bottom:12px">2027</div>
+        <div style="font-size:19px;font-weight:800;margin-bottom:18px;line-height:1.5;color:var(--ink)">지금, 필요한 것을<br>알려주는 에이전트</div>
+        <div class="tags" style="justify-content:center"><span class="tag">발견</span><span class="tag">추천</span><span class="tag">안내</span></div>
+      </div>
+      <div class="t-arrow">→</div>
+      <div>
+        <div class="year" style="font-size:14px;font-weight:800;color:var(--ink-mute);letter-spacing:.24em;margin-bottom:12px">2030</div>
+        <div style="font-size:19px;font-weight:800;margin-bottom:18px;line-height:1.5;color:var(--ink-soft)">상황을 이해하고 필요한 일을<br>실행하는 에이전트</div>
+        <div class="tags" style="justify-content:center"><span class="tag" style="background:#E9EBF0;color:var(--ink-soft)">이해</span><span class="tag" style="background:#E9EBF0;color:var(--ink-soft)">판단</span><span class="tag" style="background:#E9EBF0;color:var(--ink-soft)">실행</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="t-note" style="text-align:center;font-size:16px;font-weight:600;color:var(--ink-soft);margin-top:34px">2027년은 현재 제공 가능한 <strong style="color:var(--accent)">안내·추천 중심의 경험</strong>을 구체화하고, 2030년에는 <strong style="color:var(--accent)">실행 역량</strong>까지 확장하는 방향</p>
+</section>
+
+<section id="s4">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 04</div><h2>2027년 전략 방향</h2></div>
+  <p class="lead">브랜드 비전인 ‘생활을 움직이는 금융’을 실현하기 위해 두 가지 전략 방향을 추진</p>
+  <div class="strat">
+    <div class="card">
+      <div class="dir">방향 1 · 브랜드 가치 구축</div>
+      <h3>선택의 이유를 만든다</h3>
+      <p class="q">어떤 브랜드가 될 것인가</p>
+    </div>
+    <div class="card">
+      <div class="dir">방향 2 · 비즈니스 성장 기여</div>
+      <h3>선택의 기회를 늘린다</h3>
+      <p class="q">어떻게 더 자주 선택하게 할 것인가</p>
+    </div>
+  </div>
+</section>
+
+<section id="s5">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 05</div><h2>핵심 목표 및 실행과제</h2></div>
+
+  <div class="goal">
+    <div class="goal-head"><span class="goal-badge build">GOAL 1 · 구축</span><h3>생활금융 에이전트로의 중장기 브랜드 구축</h3></div>
+    <p>카카오페이의 미래 방향성을 정의하고, 결제를 넘어 생활금융 전반에서 차별적인 브랜드 가치를 구축</p>
+    <ol class="steps">
+      <li>
+        <h4>브랜드 비전 및 포지셔닝 재정립</h4>
+        <ul class="mini">
+          <li>생활금융 에이전트의 개념·고객 편익·차별적 역할 구체화</li>
+          <li>카카오페이·증권·보험을 포괄하는 브랜드 구조 및 메시지 원칙 정립</li>
+        </ul>
+      </li>
+      <li>
+        <h4>리브랜딩 추진 및 새로운 브랜드 경험 구축</h4>
+        <ul class="mini">
+          <li>브랜드 스토리, 핵심 메시지, 디자인 및 경험 원칙 수립</li>
+          <li>새로운 브랜드 방향을 알리는 통합 커뮤니케이션 추진</li>
+        </ul>
+      </li>
+      <li>
+        <h4>브랜드 가치의 지속적 축적</h4>
+        <ul class="mini">
+          <li>서비스·콘텐츠·캠페인에 일관된 브랜드 경험 적용</li>
+          <li>핵심 브랜드 연상과 고객 인식 변화의 정기적 진단</li>
+        </ul>
+      </li>
+    </ol>
+    <div class="result"><b>기대 성과</b> — 차별적 정체성 확립, 생활금융 에이전트 브랜드 인식 확대, 장기 브랜드 자산 축적</div>
+  </div>
+
+  <div class="goal">
+    <div class="goal-head"><span class="goal-badge grow">GOAL 2 · 성장</span><h3>카카오페이 가치 인식 강화 및 이용 성장 기여</h3></div>
+    <p>2027 브랜드 커뮤니케이션 핵심 방향성</p>
+    <div class="kw"><b style="font-size:24px;letter-spacing:-.01em;line-height:1.5;display:block;margin-bottom:10px">핵심 방향 · 카카오페이, 쓸수록 새롭다</b>고객이 미처 알지 못했던 카카오페이의 다양한 혜택과 쓰임을 지속적으로 발견하고, 결제·금융·생활 전반에서 이용 경험으로 연결하여 사업 성장에 기여</div>
+    <ol class="steps">
+      <li>
+        <h4>플랫폼 혜택·효용 커뮤니케이션 체계화</h4>
+        <ul class="mini">
+          <li>카카오페이 내 다양한 서비스의 혜택·효용을 ‘새로운 발견과 쓰임’이라는 일관된 방향으로 제시</li>
+          <li>데일리·월간·분기·연간 단위의 촘촘한 커뮤니케이션으로 플랫폼의 혜택과 효용을 지속적으로 전달</li>
+          <li>결제를 넘어 플랫폼 전반에 다양한 혜택과 쓸모가 있다는 인식 확대</li>
+        </ul>
+      </li>
+      <li>
+        <h4>결제 부문 — 발견·이용 접점 확대 및 이용 활성화</h4>
+        <ul class="mini">
+          <li><b>오프라인</b> — 일상 속 다양한 결제 접점에서의 사용 유도로 이어지는 커뮤니케이션 강화</li>
+          <li><b>온라인</b> — 주요 핵심 가맹점과의 브랜드 협업으로 신규 수요 창출</li>
+          <li><b>해외</b> — 여행 맥락에서 차별적 혜택과 활용 가치를 전달하고 이용 확대</li>
+        </ul>
+      </li>
+      <li>
+        <h4>비결제 부문 — 새로운 서비스 가치 발견 및 이용 확대</h4>
+        <ul class="mini">
+          <li>금융·생활 서비스의 차별적 가치와 고객이 인지하지 못했던 이용 효용 전달</li>
+          <li>유저의 생활 맥락에 맞는 서비스 이용 계기를 발굴해 교차 이용 촉진</li>
+        </ul>
+      </li>
+    </ol>
+    <div class="result"><b>기대 성과</b> — 플랫폼 가치·혜택 인식 강화, 이용 고객 확대, PU·TPV·TRX 성장 기여</div>
+  </div>
+</section>
+
+<section id="s6">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 06</div><h2>KPI</h2></div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th colspan="2" style="color:var(--accent);background:var(--accent-soft)">목표 1 KPI</th></tr><tr><th>핵심과제</th><th>핵심 KPI</th></tr></thead>
+      <tbody>
+        <tr><td>비전 및 포지셔닝 재정립</td><td>포지셔닝·브랜드 체계·메시지 원칙 확정</td></tr>
+        <tr><td>리브랜딩 및 경험 전환</td><td>핵심 마일스톤 달성, 신규 브랜드 시스템 주요 접점 적용률(%)</td></tr>
+        <tr><td>브랜드 가치 축적</td><td>주요 서비스·콘텐츠·캠페인의 브랜드 원칙 적용 및 운영</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="kpi-note"><b>보조 진단</b> — 생활금융 에이전트 인지도·핵심 메시지 연상률, 호감도·신뢰도·이용 의향의 장기 변화</p>
+
+  <div class="tbl-wrap" style="margin-top:30px">
+    <table>
+      <thead><tr><th colspan="2" style="color:var(--accent);background:var(--accent-soft)">목표 2 KPI</th></tr><tr><th>핵심과제</th><th>핵심 KPI</th></tr></thead>
+      <tbody>
+        <tr><td>플랫폼 혜택·효용 커뮤니케이션</td><td>상시 운영 성과, 혜택·효용 콘텐츠 도달·참여·이용 전환</td></tr>
+        <tr><td>결제 부문 이용 활성화</td><td>주요 캠페인의 신규·재활성 이용자 유입 및 결제 행동 전환</td></tr>
+        <tr><td>비결제 부문 이용 확대</td><td>주요 캠페인의 서비스 유입·이용 전환 및 교차 이용 성과</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="kpi-note"><b>사업 공동 기여</b> — 신규·재활성 PU 증분, 결제 TPV·TRX 증분, 비결제 이용·교차 이용 증분<br><b>보조 진단</b> — 카카오페이 혜택 인지율·결제수단 선택 의향, 플랫폼 서비스·혜택 인식 변화</p>
+
+  <div class="card principles" style="margin-top:22px">
+    <h3>측정 원칙</h3>
+    <ul style="padding-left:20px;margin-top:10px;font-size:14px;color:var(--ink-soft)">
+      <li>직접 KPI는 브랜드실이 통제 가능한 실행 품질과 고객 행동 성과 중심으로 설정</li>
+      <li>사업 기여는 사업 조직과 공동 관리하며, 가능한 범위에서 비교군·실험군 및 캠페인 기여 분석으로 증분을 추정</li>
+      <li>종합 브랜드 인덱스는 외부 변수 영향이 크므로 직접 KPI보다 중장기 진단 지표로 활용</li>
+      <li>세부 목표치는 전년도 실적과 측정 가능성을 확인한 뒤 확정</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s7">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 07</div><h2>실행 원칙 및 협업 과제</h2></div>
+  <div class="grid2">
+    <div class="card">
+      <div class="dot"></div>
+      <h3>일관성 — 개별 활동을 브랜드 자산으로 연결</h3>
+      <p>모든 활동이 카카오페이의 차별적 가치와 연결되도록 기획 ‘쓸수록 새롭다’를 공통 방향으로 활용하되 개별 사업과 캠페인의 특성에 맞게 적용</p>
+    </div>
+    <div class="card">
+      <div class="dot"></div>
+      <h3>유저 중심 — 고객의 이용 맥락을 기준으로 소통</h3>
+      <p>사업·상품 분류보다 고객이 체감하는 편익과 이용 상황을 중심으로 커뮤니케이션 기능과 상품 소개를 넘어 고객에게 제공하는 실질적 가치를 전달</p>
+    </div>
+    <div class="card" style="grid-column:1 / -1">
+      <div class="dot round"></div>
+      <h3>성장 연결 — 인지도에서 실제 이용 행동까지</h3>
+      <p>단순 노출·참여뿐 아니라 서비스 탐색·유입·이용으로 이어지는 경로를 설계하고, 주요 캠페인의 이용 성과를 측정해 후속 활동에 반영</p>
+    </div>
+  </div>
+</section>
+
+<section id="s8">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 08</div><h2>후속 구체화 과제</h2></div>
+  <div class="card" style="padding:34px 36px">
+    <ol style="padding-left:22px;font-size:14.5px;color:var(--ink);font-weight:600;display:grid;gap:12px">
+      <li>생활금융 에이전트의 고객 약속 및 브랜드 경험 원칙 확정</li>
+      <li>플랫폼 전체 혜택의 통합 커뮤니케이션 구조와 연간 캘린더 수립</li>
+      <li>대표 캠페인·사업별 협업 과제 및 우선순위 선정</li>
+      <li>브랜드실 직접 KPI와 사업 공동 KPI의 측정 방식 합의</li>
+      <li>분기별 로드맵·예산·담당 조직 및 의사결정 체계 구체화</li>
+    </ol>
+  </div>
+</section>
+
+<section id="s9">
+  <div class="sec-head"><div class="sec-eyebrow">SECTION 09</div><h2>전사 요청 사항</h2></div>
+  <div class="goal asks">
+    <ol class="steps" style="padding-top:2px">
+      <li>
+        <h4>2026 노난날 중간 회고</h4>
+        <ul class="mini">
+          <li>올해 수준에서 더 강력한, 고객이 제대로 체감할 수 있는 온·오프라인 결제 혜택 확대 필요</li>
+          <li>추후에는 커뮤니케이션 비용을 줄이더라도 혜택을 보강하는 편으로 개선</li>
+          <li>증권·보험 등 비결제 영역과의 혜택 연계를 통해 플랫폼 차원의 시너지 강화</li>
+        </ul>
+      </li>
+      <li>
+        <h4>매달 제시하는 결제 혜택의 체계화 및 브랜딩 강화</h4>
+        <ul class="mini">
+          <li>혜택의 제공 방식과 커뮤니케이션에 일관성을 확보하고, 카카오페이만의 차별화된 혜택 경험 구축</li>
+          <li>사업부와 협력하여 주요 혜택의 상시 노출 및 이용 활성화 방안 구체화</li>
+        </ul>
+      </li>
+      <li>
+        <h4>생활금융 에이전트 실현</h4>
+        <ul class="mini">
+          <li>27년 리브랜딩을 위한 전사적 협조 및 시너지 필요</li>
+          <li>지향점으로만 머물지 않도록, 실제 서비스와 고객 경험으로 구현될 수 있도록 전사 논의 요청</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<div class="conclusion">
+  <div class="c-lines">
+    <div class="c-line">브랜드 비전 <b>생활을 움직이는 금융</b></div>
+    <div class="c-line">2030 브랜드 지향점 <b>생활금융 에이전트</b></div>
+    <div class="c-line">2027 브랜드컴 방향 <b>카카오페이, 쓸수록 새롭다</b></div>
+    <div class="c-line hl">= 선택의 이유를 만들고, 선택의 기회를 늘린다</div>
+  </div>
+</div>
+
+</div>
+
+<footer>2027년 사업계획 · 브랜드실 — PDF 원문 기반 웹 정리본 · 내부 검토용</footer>
+
+</body>
+</html>
